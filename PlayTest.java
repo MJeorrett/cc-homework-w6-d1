@@ -35,4 +35,10 @@ public class PlayTest {
     assertEquals( 5, hamlet.availableMaleRoles() );
   }
 
+  @Test
+  public void
+  testAvailableFemaleRolesInitialisedCorrectly() {
+    assertEquals( 2, hamlet.availableFemaleRoles() );
+  }
+
 }

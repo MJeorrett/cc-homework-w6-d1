@@ -30,15 +30,25 @@ class Play {
   }
 
   public int availableMaleRoles() {
-    int maleRolesCast = 0;
+    int maleRolesCast = numberRolesCastForGender( 'm' );
+    return getNumberMaleRoles() - maleRolesCast;
+  }
+
+  public int availableFemaleRoles() {
+    int femaleRolesCast = numberRolesCastForGender( 'f' );
+    return getNumberFemaleRoles() - femaleRolesCast;
+  }
+
+  private int numberRolesCastForGender( char gender ) {
+    int numberRolesCast = 0;
 
     for ( Actor actor : cast ) {
-      if ( actor != null && actor.gender == 'm' ) {
-        maleRolesCast++;
+      if ( actor != null && actor.gender == gender ) {
+        numberRolesCast++;
       }
     }
 
-    return getNumberMaleRoles() - maleRolesCast;
+    return numberRolesCast;
   }
 
 }
