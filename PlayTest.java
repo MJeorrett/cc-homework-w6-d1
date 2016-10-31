@@ -5,52 +5,62 @@ public class PlayTest {
 
   Play hamlet;
   Actor tomCruise;
+  Actor pamRogers;
 
   @Before
   public void before() throws ActorException {
     this.hamlet = new Play( "Hamlet", 5, 2 );
     this.tomCruise = new Actor( "Tom", "Cruise", 'm' );
+    this.pamRogers = new Actor( "Pam", "Rogers", 'f' );
+
   }
 
   @Test
-  public void testHasName() {
+  public void hasName() {
     assertEquals( "Hamlet", hamlet.getName() );
   }
 
   @Test
-  public void testHasNumberMaleRoles() {
+  public void hasNumberMaleRoles() {
     assertEquals( 5, hamlet.getNumberMaleRoles() );
   }
 
   @Test
-  public void testHasNumberFemaleRoles() {
+  public void hasNumberFemaleRoles() {
     assertEquals( 2, hamlet.getNumberFemaleRoles() );
   }
 
   @Test
-  public void testHasCastSize() {
+  public void hasCastSize() {
     assertEquals( 7, hamlet.castSize() );
   }
 
   @Test
-  public void testAvailableMaleRolesInitialisedCorrectly() {
+  public void availableMaleRolesInitialisedCorrectly() {
     assertEquals( 5, hamlet.availableMaleRoles() );
   }
 
   @Test
   public void
-  testAvailableFemaleRolesInitialisedCorrectly() {
+  availableFemaleRolesInitialisedCorrectly() {
     assertEquals( 2, hamlet.availableFemaleRoles() );
   }
 
   @Test
-  public void testNextRoleIndexStartsAtZero() {
+  public void nextRoleIndexStartsAtZero() {
     assertEquals( 0, hamlet.nextRoleIndex() );
   }
 
   @Test
   public void addingMaleActorReducesRolesAvailable() {
     hamlet.castActor( tomCruise );
+    assertEquals( 4, hamlet.availableMaleRoles() );
+  }
+
+  @Test
+  public void addingFemaleActorReducesRolesAvailable() {
+    hamlet.castActor( pamRogers );
+    assertEquals( 1, hamlet.availableFemaleRoles() );
   }
 
 }

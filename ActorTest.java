@@ -11,22 +11,22 @@ public class ActorTest {
   }
 
   @Test
-  public void testHadFirstName() {
+  public void hadFirstName() {
     assertEquals( "Tom", tomCruise.getFirstName() );
   }
 
   @Test
-  public void testHasLastName() {
+  public void hasLastName() {
     assertEquals( "Cruise", tomCruise.getLastName() );
   }
 
   @Test
-  public void testHasGender() {
+  public void hasGender() {
     assertEquals( 'm', tomCruise.getGender() );
   }
 
   @Test(expected = ActorException.class)
-  public void testExceptionRaisedIfBadGender() throws ActorException {
+  public void exceptionRaisedIfBadGender() throws ActorException {
     Actor testActor = new Actor( "Test", "Smith", 'g' );
   }
 
