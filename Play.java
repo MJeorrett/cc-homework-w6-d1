@@ -3,14 +3,14 @@ class Play {
   String name;
   int numberMaleRoles;
   int numberFemaleRoles;
-  Actor[] actors;
+  Actor[] cast;
 
   public Play( String name, int numberMaleRoles, int numberFemaleRoles ) {
     this.name = name;
     this.numberMaleRoles = numberMaleRoles;
     this.numberFemaleRoles = numberFemaleRoles;
     int castSize = numberMaleRoles + numberFemaleRoles;
-    actors = new Actor[castSize];
+    cast = new Actor[castSize];
   }
 
   public String getName() {
@@ -26,7 +26,19 @@ class Play {
   }
 
   public int castSize() {
-    return this.actors.length;
+    return this.cast.length;
+  }
+
+  public int availableMaleRoles() {
+    int maleRolesCast = 0;
+
+    for ( Actor actor : cast ) {
+      if ( actor != null && actor.gender == 'm' ) {
+        maleRolesCast++;
+      }
+    }
+
+    return getNumberMaleRoles() - maleRolesCast;
   }
 
 }

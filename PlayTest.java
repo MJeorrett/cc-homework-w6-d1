@@ -30,4 +30,9 @@ public class PlayTest {
     assertEquals( 7, hamlet.castSize() );
   }
 
+  @Test
+  public void testAvailableMaleRolesInitialisedCorrectly() {
+    assertEquals( 5, hamlet.availableMaleRoles() );
+  }
+
 }
