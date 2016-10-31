@@ -52,8 +52,18 @@ class Play {
   }
 
   public void castActor( Actor actor ) {
-    int nextIndex = nextRoleIndex();
-    cast[nextIndex] = actor;
+
+    int avaialableRoles = 0;
+    if ( actor.getGender() == 'm' ) {
+      avaialableRoles = availableMaleRoles();
+    } else {
+      avaialableRoles = availableFemaleRoles();
+    }
+
+    if ( avaialableRoles > 0 ) {
+      int nextIndex = nextRoleIndex();
+      cast[nextIndex] = actor;
+    }
   }
 
   private int numberRolesCastForGender( char gender ) {

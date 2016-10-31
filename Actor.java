@@ -9,6 +9,7 @@ class Actor {
     if ( gender != 'm' && gender != 'f' ) {
       throw new ActorException("Gender must be either 'm' or 'f'");
     }
+
     this.firstName = firstName;
     this.lastName = lastName;
     this.gender = gender;

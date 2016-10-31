@@ -63,4 +63,28 @@ public class PlayTest {
     assertEquals( 1, hamlet.availableFemaleRoles() );
   }
 
+  @Test
+  public void cantAddTooManyMaleActors() throws ActorException {
+
+    for ( int i = 0; i < 10; i++ ) {
+      Actor testActor = new Actor( "testFirst", "testLast", 'm' );
+      hamlet.castActor( testActor );
+    }
+
+    assertEquals( 0, hamlet.availableMaleRoles() );
+    assertEquals( 2, hamlet.availableFemaleRoles() );
+  }
+
+  @Test
+  public void cantAddTooManyFemaleActors() throws ActorException {
+
+    for ( int i = 0; i < 10; i++ ) {
+      Actor testActor = new Actor( "testFirst", "testLast", 'f' );
+      hamlet.castActor( testActor );
+    }
+
+    assertEquals( 5, hamlet.availableMaleRoles() );
+    assertEquals( 0, hamlet.availableFemaleRoles() );
+  }
+
 }
