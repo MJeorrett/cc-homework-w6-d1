@@ -41,4 +41,9 @@ public class PlayTest {
     assertEquals( 2, hamlet.availableFemaleRoles() );
   }
 
+  @Test
+  public void testNextRoleIndexStartsAtZero() {
+    assertEquals( 0, hamlet.nextRoleIndex() );
+  }
+
 }

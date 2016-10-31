@@ -39,6 +39,18 @@ class Play {
     return getNumberFemaleRoles() - femaleRolesCast;
   }
 
+  public int nextRoleIndex() {
+    int nextRoleIndex = 0;
+
+    for ( Actor actor : cast ) {
+      if ( actor != null ) {
+        nextRoleIndex++;
+      }
+    }
+
+    return nextRoleIndex;
+  }
+
   private int numberRolesCastForGender( char gender ) {
     int numberRolesCast = 0;
 
