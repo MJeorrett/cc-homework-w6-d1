@@ -4,7 +4,11 @@ class Actor {
   String lastName;
   char gender;
 
-  public Actor( String firstName, String lastName, char gender ) {
+  public Actor ( String firstName, String lastName, char gender ) throws ActorException {
+
+    if ( gender != 'm' && gender != 'f' ) {
+      throw new ActorException("Gender must be either 'm' or 'f'");
+    }
     this.firstName = firstName;
     this.lastName = lastName;
     this.gender = gender;

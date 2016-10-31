@@ -7,7 +7,7 @@ public class PlayTest {
   Actor tomCruise;
 
   @Before
-  public void before() {
+  public void before() throws ActorException {
     this.hamlet = new Play( "Hamlet", 5, 2 );
     this.tomCruise = new Actor( "Tom", "Cruise", 'm' );
   }

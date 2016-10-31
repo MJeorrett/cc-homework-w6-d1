@@ -6,7 +6,7 @@ public class ActorTest {
   Actor tomCruise;
 
   @Before
-  public void before() {
+  public void before() throws ActorException {
     tomCruise = new Actor( "Tom", "Cruise", 'm' );
   }
 
@@ -23,6 +23,11 @@ public class ActorTest {
   @Test
   public void testHasGender() {
     assertEquals( 'm', tomCruise.getGender() );
+  }
+
+  @Test(expected = ActorException.class)
+  public void testExceptionRaisedIfBadGender() throws ActorException {
+    Actor testActor = new Actor( "Test", "Smith", 'g' );
   }
 
 }
