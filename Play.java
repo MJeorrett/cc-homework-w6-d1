@@ -51,6 +51,11 @@ class Play {
     return nextRoleIndex;
   }
 
+  public void castActor( Actor actor ) {
+    int nextIndex = nextRoleIndex();
+    cast[nextIndex] = actor;
+  }
+
   private int numberRolesCastForGender( char gender ) {
     int numberRolesCast = 0;
 

@@ -4,10 +4,12 @@ import org.junit.*;
 public class PlayTest {
 
   Play hamlet;
+  Actor tomCruise;
 
   @Before
   public void before() {
     this.hamlet = new Play( "Hamlet", 5, 2 );
+    this.tomCruise = new Actor( "Tom", "Cruise", 'm' );
   }
 
   @Test
@@ -44,6 +46,11 @@ public class PlayTest {
   @Test
   public void testNextRoleIndexStartsAtZero() {
     assertEquals( 0, hamlet.nextRoleIndex() );
+  }
+
+  @Test
+  public void addingMaleActorReducesRolesAvailable() {
+    hamlet.castActor( tomCruise );
   }
 
 }
