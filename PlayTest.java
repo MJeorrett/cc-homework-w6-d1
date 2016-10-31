@@ -25,4 +25,9 @@ public class PlayTest {
     assertEquals( 2, hamlet.getNumberFemaleRoles() );
   }
 
+  @Test
+  public void testHasCastSize() {
+    assertEquals( 7, hamlet.castSize() );
+  }
+
 }
